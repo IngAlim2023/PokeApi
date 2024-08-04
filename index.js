@@ -55,14 +55,19 @@ let busca = document.getElementById('busca');
 let busqueda = document.getElementById('busqueda');
 
 busqueda.addEventListener('click', ()=>{
-
-    let resultado = busca.value;
-    
-    for (let j = 0 ; j < pokemones.length; j++){
-       if ( pokemones[j].nombre == resultado){
-            plasmarPokemon(j);
-       }
+    if (!busca.value == ""){
+        let resultado = busca.value;
+        
+        for (let j = 0 ; j < pokemones.length; j++){
+        if ( pokemones[j].nombre == resultado){
+                plasmarPokemon(j);
+        }
+        }
+    } else{
+        alert('Buscador vacio, intentalo de nuevo.');
     }
+        
+    
 
 })
 
@@ -78,6 +83,10 @@ function plasmarPokemon (numPoke){
         cPTitle.innerText = pokemones[numPoke].nombre;
         cardPoke.appendChild(cPTitle);
 
+    let imagPoke = document.createElement('img');
+        imagPoke.className = "imag-poke";
+        imagPoke.src = pokemones[numPoke].img_url;
+        cardPoke.appendChild(imagPoke);
         
     modalPoke.appendChild(cardPoke);
 
