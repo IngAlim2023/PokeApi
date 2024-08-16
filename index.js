@@ -55,18 +55,40 @@ let busca = document.getElementById('busca');
 let busqueda = document.getElementById('busqueda');
 
 busqueda.addEventListener('click', ()=>{
-    if (!busca.value == ""){
-        let resultado = busca.value;
-        
-        for (let j = 0 ; j < pokemones.length; j++){
-        if ( pokemones[j].nombre == resultado){
-                plasmarPokemon(j);
+    if (busca.value.trim()) {
+        const resultado = busca.value.toLowerCase();
+
+        const pokemonEncontrado = pokemones.find(pokemon => pokemon.nombre.toLowerCase() === resultado);
+
+        console.log(pokemonEncontrado);
+        if (pokemonEncontrado) {
+            plasmarPokemon(pokemonEncontrado.id - 1);
+        } else {
+            alert('Pokémon no encontrado, intentalo de nuevo.');
         }
-        }
-    } else{
-        alert('Buscador vacio, intentalo de nuevo.');
+    } else {
+        alert('Buscador vacío, intentalo de nuevo.');
+    } 
+
+})
+
+busca.addEventListener('keypress', (event)=>{
+    if (event.key === 'Enter') {
+        if (busca.value.trim()) {
+            const resultado = busca.value.toLowerCase();
+    
+            const pokemonEncontrado = pokemones.find(pokemon => pokemon.nombre.toLowerCase() === resultado);
+    
+            console.log(pokemonEncontrado);
+            if (pokemonEncontrado) {
+                plasmarPokemon(pokemonEncontrado.id - 1);
+            } else {
+                alert('Pokémon no encontrado, intentalo de nuevo.');
+            }
+        } else {
+            alert('Buscador vacío, intentalo de nuevo.');
+        }     
     }
-        
     
 
 })

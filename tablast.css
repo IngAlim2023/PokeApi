@@ -1,0 +1,7 @@
+.formulario {
+    width: 50%;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 grey;
+    padding: 15px;
+}
