@@ -1,4 +1,4 @@
-const apiPoke = "https://pokeapi.co/api/v2/pokemon";
+const apiPoke = "https://pokeapi.co/api/v2/pokemon?limit=1200";
 let divPokemon = document.getElementById("pokemon");
 const pokemones = [];
 
