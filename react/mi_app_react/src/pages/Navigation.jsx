@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export function Navigation() {
+
+  const notify = () => toast.success('Vamos')
   return (
     <div>
       <Link to="/">
-        <button>Inicio</button>
+        <button onClick={notify}>Inicio</button>
       </Link>
       <Link to="/user">
-        <button>Usuario</button>
+        <button onClick={notify}>Usuario</button>
       </Link>
       <Link to="/admin">
-        <button>Administrador</button>
+        <button onClick={notify}>Administrador</button>
       </Link>
       <Link to="/users">
-        <button>Usuarios</button>
+        <button onClick={notify}>Usuarios</button>
       </Link>
     </div>
   );

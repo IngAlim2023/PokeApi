@@ -8,7 +8,7 @@ import { User } from "./pages/User";
 import { Navigation } from "./pages/Navigation";
 import {Inicio} from "./pages/Inicio";
 import { PruebaUsers } from "./pages/PruebaUsers";
-
+import {Toaster} from 'react-hot-toast';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path="/admin" element={<PrimerPag />} />
         <Route path="/users" element={<PruebaUsers />} />
       </Routes>
+      <Toaster position="top-right" reverseOrder={false} />
     </BrowserRouter>
   );
 }

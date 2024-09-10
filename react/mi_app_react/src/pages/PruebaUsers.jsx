@@ -55,7 +55,7 @@ export function PruebaUsers() {
        />
       {datosUser.map((cliente) => (
         <div key={cliente.id}> 
-        <h3>{cliente.nombre} {cliente.apellido} </h3>
+        <h3 className="br-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">{cliente.nombre} {cliente.apellido} </h3>
         <label>Telefono: {cliente.telefono}</label>
         </div>
       ))}

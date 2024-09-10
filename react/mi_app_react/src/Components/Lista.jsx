@@ -1,13 +1,14 @@
 
 
-export function Lista() {
+export function Lista(props) {
+  
   return (
     <div>
       <ul>
       <span>V</span>
         <li>
              
-            mi primer tarea
+            {props.nombre}
             
         </li>
         <span>X</span>
