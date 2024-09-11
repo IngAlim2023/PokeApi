@@ -1,14 +1,13 @@
 import { useState } from "react"
 
-export function Buscador() {
-    const [valor, setValor] = useState('');
+// con los props que pasamos en Administador el buscador procede a realizar la busqueda y setear el valor de buscador:
+export function Buscador(props) {
   return (
     <>
          <input  type="text" placeholder="Ingresa tarea:" 
-         value={valor}
+         value={props.buscador}
          onChange={(e) =>{
-            setValor(e.target.value)
-            console.log(valor)
+            props.setBuscador(e.target.value)
          }}/>
     </>
   )
